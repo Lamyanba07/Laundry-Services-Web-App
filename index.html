@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Services</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+    (function(){
+        emailjs.init("s2gT1M8fDMCGkbymj");
+    })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="left-nav">
+                Logo
+            </div>
+
+            <div class="center-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="right-nav">
+                Username
+            </div>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Revitalize Your <br>
+                Clothes with Expert <br>
+                <span>Laundry Services!</span>
+            </h1>
+
+            <p>From premium dry cleaning to swift wash and fold, we deliver care and convenience. Schedule a pickup and rediscover the freshness of your clothes today!</p>
+            
+            <a href="#booking">
+            <button id="scrollBtn">🛒 Book a Service Today!</button>
+            </a>
+        </div>
+
+        <div class="hero-right">
+            <img src="https://i.pinimg.com/736x/e4/b1/ae/e4b1ae6126d895d00b238ad673d02019.jpg" alt="washing machine">
+        </div>
+    </section>
+
+    <section class="achievement">
+        <h1>Our Achievements</h1>
+
+        <div class="stats">
+            <div>
+                <h2>15+</h2>
+                <p>Laundry Services</p>
+            </div>
+
+            <div>
+                <h2>240+</h2>
+                <p>Happy Customers</p>
+            </div>
+            
+            <div>
+                <h2>2+ Years</h2>
+                <p>Experience</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="booking">
+        <div class="booking-left">
+            <h1>Our Services</h1>
+            <p>Click on the Add Item to add the Services to your Cart!</p>
+            <hr>
+
+            <div class="service">
+                <div class="service-info">
+                    <span class="service-name">Dry Cleaning</span>
+                    <span class="service-price">₹200.00</span>
+                </div>
+                <button class="add-btn" data-name="Dry Cleaning" data-price="200">Add Item</button>
+            </div>
+            <div class="service">
+                <div class="service-info">
+                    <span class="service-name">Wash & Fold</span>
+                    <span class="service-price">₹150.00</span>
+                </div>
+                <button class="add-btn" data-name="Wash & Fold" data-price="150">Add Item</button>
+            </div>
+            <div class="service">
+                <div class="service-info">
+                    <span class="service-name">Ironing</span>
+                    <span class="service-price">₹30.00</span>
+                </div>
+                <button class="add-btn" data-name="Ironing" data-price="30">Add Item</button>
+            </div>
+            <div class="service">
+                <div class="service-info">
+                    <span class="service-name">Stain Removal</span>
+                    <span class="service-price">₹500.00</span>
+                </div>
+                <button class="add-btn" data-name="Stain Removal" data-price="500">Add Item</button>
+            </div>
+            <div class="service">
+                <div class="service-info">
+                    <span class="service-name">Leather & Suede Cleaning</span>
+                    <span class="service-price">₹999.00</span>
+                </div>
+                <button class="add-btn" data-name="Leather & Suede Cleaning" data-price="999">Add Item</button>
+            </div>
+            <div class="service">
+                <div class="service-info">
+                    <span class="service-name">Wedding Dress Cleaning</span>
+                    <span class="service-price">₹2,799.00</span>
+                </div>
+                <button class="add-btn" data-name="Wedding Dress Cleaning" data-price="2799">Add Item</button>
+            </div>
+            <hr>
+            <p>ⓘ Add the items to the cart and book now!</p>
+        </div>
+
+
+        <div class="booking-right">
+            <div class="cart-card">
+                <h3>Added Items</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S. No.</th>
+                            <th>Service Name</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                        <tbody id="cart-items">
+                        </tbody>
+                </table>
+
+                <div class="total">
+                    <span>Total Amount</span>
+                    <span>₹<span id="total-amount">0.00</span></span>
+                </div>
+            </div>
+             
+            <div class="book-card">
+                <h4>Book Now</h4>
+
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email ID</label>
+                        <input type="email" id="email" placeholder="email@gmail.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" id="phone" placeholder="+91 12345 67890" required>
+                    </div>
+                </div>
+                <button class="book-btn">Book Now</button>
+                <p id="success-message" class="success-text"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <img src="./image/laundry-machine.png" alt="Premium Services">
+            <h3>Premium Services</h3>
+            <p>Elevate your wardrobe with our meticulous dry cleaning ensuring garments look as good as new.</p>
+        </div>
+
+        <div class="feature">
+            <img src="./image/customer-support.png" alt="Quick Support">
+            <h3>Quick Support</h3>
+            <p>We’re committed to providing prompt solutions to ensure your experience is smooth and worry-free.</p>
+
+        </div>
+
+        <div class="feature">
+            <img src="./image/fast-delivery.png" alt="Hassle Free Delivery">
+            <h3>Hassle Free Delivery</h3>
+            <p>Enjoy seamless service with convenient pickup and delivery options tailored to your schedule.</p>
+
+        </div>
+
+        <div class="feature">
+            <img src="./image/affordable.png" alt="Affordable Prices">
+            <h3>Affordable Prices</h3>
+            <p>Experience exceptional care without breaking the bank – our prices make laundry stress-free.</p>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="newsletter-left">
+            <h2>Subscribe to Our Newsletter.</h2>
+        </div>
+
+        <div class="newsletter-right">
+            <span>
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+                </span>
+            <button>Subscribe</button>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-col">
+            <h3>Logo</h3>
+            <h5>About Us</h5>
+            <p>Laundry Service is a premium dry cleaning and laundry service that ensures your garments are cleaned with care and attention to detail.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Important Links</h4>
+            <p>About Us</p>
+            <p>Contact Us</p>
+            <p>Privacy Policy</p>
+            <p>Terms of Use</p>
+            <p>Refund Policy</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p>mail@site.com</p>
+            <p>+91 12345 67890</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="#">
+                    <img src="./image/twitter.png" alt="twitter">
+                </a>
+                <a href="#">
+                    <img src="./image/social.png" alt="facebook">
+                </a>
+                <a href="#">
+                    <img src="./image/video.png" alt="instagram">
+                </a>
+                <a href="#">
+                    <img src="./image/youtube.png" alt="youtube">
+                </a>  
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
