@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+  // Smooth Scroll
   const scrollBtn = document.getElementById("scrollBtn");
 
   if (scrollBtn) {
@@ -84,14 +85,15 @@ bookBtn.addEventListener("click", function (e) {
     return;
   }
 
-  // SEND EMAIL
+  // SEND EMAIL (UPDATED VERSION)
   emailjs.send("service_ibuwqdl", "template_acja5do", {
-    customer_name: name,
-    customer_email: email,
-    customer_phone: phone,
+    name: name,
+    to_email: email,
+    phone: phone,
     services: cart.map(item => item.name).join(", "),
-    total_amount: total.toFixed(2)
-  }).then(function () {
+    total: total.toFixed(2)
+  })
+  .then(function () {
 
     successMessage.textContent =
       "Thank you for booking the service. We will get back to you soon!";
@@ -101,7 +103,7 @@ bookBtn.addEventListener("click", function (e) {
     total = 0;
     updateCart();
 
-    // Reset buttons on left
+    // Reset buttons
     document.querySelectorAll(".add-btn").forEach(btn => {
       btn.textContent = "Add Item";
       btn.classList.remove("remove-style");
@@ -112,7 +114,10 @@ bookBtn.addEventListener("click", function (e) {
     document.getElementById("email").value = "";
     document.getElementById("phone").value = "";
 
-  }).catch(function () {
+  })
+  .catch(function (error) {
+    console.log("FAILED...", error);
     alert("Failed to send email. Please try again.");
   });
+
 });
